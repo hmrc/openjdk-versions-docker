@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+IMAGE=${IMAGE:-adoptopenjdk/openjdk8}
+
+if [ -t 0 ]; then FLAGS=-it; fi
+
+docker run --rm ${FLAGS} \
+		-v $(pwd):$(pwd) \
+		-w $(pwd) \
+		${IMAGE} "$@"
