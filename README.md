@@ -44,3 +44,13 @@ env IMAGE=adoptopenjdk/openjdk11-openj9 ./docker-openjdk-x sh
 # java -version
 ```
 
+As they are minimal images, a `setup` task is provided, azul image I'm
+looking at you, to download an sbt launch jar.
+
+``` bash
+make setup
+make build-with-azul
+```
+
+Finally, if you encounter permission problems, just run `make clean`.
+
